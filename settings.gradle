@@ -14,3 +14,8 @@ dependencyResolutionManagement {
 }
 rootProject.name = "NewsTutorialAppSample"
 include ':app'
+include ':core'
+include ':news'
+include ':news:news_data'
+include ':news:news_domain'
+include ':news:news_presentation'
