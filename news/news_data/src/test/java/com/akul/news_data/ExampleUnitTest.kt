@@ -1,4 +1,4 @@
-package com.akul.data
+package com.akul.news_data
 
 import org.junit.Test
 

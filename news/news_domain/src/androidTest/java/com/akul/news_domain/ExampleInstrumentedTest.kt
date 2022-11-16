@@ -1,4 +1,4 @@
-package com.akul.data
+package com.akul.news_domain
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.akul.data.test", appContext.packageName)
+        assertEquals("com.akul.domain.test", appContext.packageName)
     }
 }

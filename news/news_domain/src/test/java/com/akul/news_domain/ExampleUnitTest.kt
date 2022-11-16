@@ -1,4 +1,4 @@
-package com.akul.domain
+package com.akul.news_domain
 
 import org.junit.Test
 
