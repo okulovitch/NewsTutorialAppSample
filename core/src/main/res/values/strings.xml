@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">news app</string>
+    <string name="error_unknown">Unknown error</string>
+    <string name="next">Next</string>
+    <string name="previous_day">Previous day</string>
+    <string name="next_day">Next day</string>
+    <string name="yesterday">Yesterday</string>
+    <string name="tomorrow">Tomorrow</string>
+    <string name="extend">Extend</string>
+    <string name="collapse">Collapse</string>
+    <string name="add">Add</string>
+    <string name="search">Search...</string>
+    <string name="today">Today</string>
+    <string name="recent">Recent</string>
+    <string name="track">Track</string>
+    <string name="error_something_went_wrong">Oops, something went wrong!</string>
+    <string name="no_results">No results</string>
+    <string name="error_invalid_values">These are not valid values</string>
+    <string name="delete">Delete</string>
+</resources>
