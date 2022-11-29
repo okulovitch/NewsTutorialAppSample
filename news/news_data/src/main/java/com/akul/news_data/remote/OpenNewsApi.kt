@@ -9,7 +9,12 @@ interface OpenNewsApi {
     @GET("/v2/everything")
     suspend fun searchEverythingNews(
         @Query("search_query") query: String
-    ) : ArticleDto//todo dto
+    ) : ArticleDto
+
+    companion object {
+        const val BASE_URL = "https://newsapi.org/"
+        private const val HEADER_API_KEY = "X-Api-Key"
+    }
 }
 
 //fun NewsService(apiKey: String): OpenNewsApi {

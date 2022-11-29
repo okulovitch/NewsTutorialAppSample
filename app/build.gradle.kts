@@ -1,3 +1,5 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+
 plugins {
     id("com.android.application")
     kotlin("android")
@@ -19,6 +21,9 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+
+//        val key: String = gradleLocalProperties(rootDir).getProperty("API_KEY")
+//        buildConfigField("String", "API_KEY", key)//todo move in news_data module
     }
 
     buildTypes {
