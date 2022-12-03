@@ -1,5 +1,7 @@
-
+import android.app.Application
+import androidx.room.Room
 import com.akul.news_data.BuildConfig
+import com.akul.news_data.local.NewsDatabase
 import com.akul.news_data.remote.OpenNewsApi
 import dagger.Module
 import dagger.Provides
@@ -24,21 +26,34 @@ object NewsDataModule {
                 level = HttpLoggingInterceptor.Level.BODY
             }
             ).addInterceptor { chain ->
-            val authorizedRequest = chain.request().newBuilder()
-                .addHeader("API_KEY", "9ce1ee9910d34bd8b25d7cb376c0d45e")//todo send api key as dependency
-                .build()
+                val authorizedRequest = chain.request().newBuilder()
+                    .addHeader(
+                        "API_KEY",
+                        "9ce1ee9910d34bd8b25d7cb376c0d45e"
+                    )//todo send api key as dependency
+                    .build()
 
-            chain.proceed(authorizedRequest)
-        }.build()
+                chain.proceed(authorizedRequest)
+            }.build()
     }
 
     @Provides
     @Singleton
-    fun provideNewsOpenApi(client: OkHttpClient) : OpenNewsApi {
+    fun provideNewsOpenApi(client: OkHttpClient): OpenNewsApi {
         return Retrofit.Builder()
             .baseUrl(OpenNewsApi.BASE_URL)
             .addConverterFactory(MoshiConverterFactory.create())
             .build()
             .create()
+    }
+
+    @Provides
+    @Singleton
+    fun provideNewsDatabase(app: Application): NewsDatabase {
+        return Room.databaseBuilder(
+            app,
+            NewsDatabase::class.java,
+            "news.db"
+        ).build()
     }
 }
