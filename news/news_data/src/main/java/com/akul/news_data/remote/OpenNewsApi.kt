@@ -7,9 +7,16 @@ import retrofit2.http.Query
 interface OpenNewsApi {
 
     @GET("/v2/everything")
-    suspend fun searchEverythingNews(
-        @Query("search_query") query: String
-    ) : ArticleDto
+    suspend fun searchEverything(
+        @Query("q") query: String
+    ): ArticleDto
+
+    @GET("/v2/everything")
+    suspend fun searchForArticle(
+        @Query("q") query: String,
+        @Query("from") date: String,
+        @Query("sortBy") sortingType: String
+    )
 
     companion object {
         const val BASE_URL = "https://newsapi.org/"

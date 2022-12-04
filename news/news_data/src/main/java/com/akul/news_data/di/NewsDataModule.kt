@@ -28,7 +28,7 @@ object NewsDataModule {
             ).addInterceptor { chain ->
                 val authorizedRequest = chain.request().newBuilder()
                     .addHeader(
-                        "API_KEY",
+                        "X-Api-Key",
                         "9ce1ee9910d34bd8b25d7cb376c0d45e"
                     )//todo send api key as dependency
                     .build()
